@@ -1,77 +1,102 @@
+<div align="center">
+
 # 📊 Polling App
+### A Real-Time Full-Stack MERN Polling Platform
 
-A modern, real-time **MERN stack polling platform** developed by **Rahul Prakash**. Polling App allows users to create diverse poll formats (Single-choice, Image-based, Open-ended, Yes/No, Rating), participate in interactive voting, bookmark favorite polls, track voting history, and visualize live analytics.
+[![React](https://img.shields.io/badge/React-18.2-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-2.0-purple?style=for-the-badge&logo=redux)](https://redux-toolkit.js.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-5.x-black?style=for-the-badge&logo=express)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?style=for-the-badge&logo=mongodb)](https://www.mongodb.com/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
----
+<p align="center">
+  <b>Created & Maintained by <a href="https://github.com/rahulprakash0898">Rahul Prakash</a></b>
+</p>
 
-## 👨‍💻 Author & Attribution
-
-- **Creator & Developer**: **Rahul Prakash**
-- **Project**: Polling App (Full Stack MERN Application)
-- **License**: MIT
-
----
-
-## 📌 Problem Statement
-
-- Traditional static polling tools lack diverse question formats and user engagement layers (such as history tracking, bookmarking, and instant feedback).
-- Limited accessibility for casual users needing quick image-based comparisons or open-ended public discussions.
-- Polling App solves these challenges by combining multiple interactive poll formats, user profile analytics, and seamless state management powered by **Redux Toolkit**.
+</div>
 
 ---
 
-## 🎯 Goals & Objectives
+## 📖 Overview
 
-| Goal | Objective |
-|---|---|
-| **Real-Time Engagement** | Instant vote updates and dynamic percentage calculations for all users. |
-| **Poll Diversity** | Comprehensive support for 4+ specialized poll types with custom options. |
-| **User Personalization** | Dedicated sections for **My Polls**, **Voted Polls**, and **Bookmarks**. |
-| **Accessibility** | Modern responsive dashboard with category filters and unified navigation. |
+**Polling App** is a feature-rich, full-stack real-time polling platform built on the **MERN stack (MongoDB, Express, React, Node.js)**. It enables users to create and explore a variety of poll formats — from single-choice and image comparisons to open-ended discussions and 5-star ratings. 
+
+With built-in **Redux Toolkit** state management, responsive UI, bookmarking, and participation tracking, Polling App provides an intuitive, high-engagement community voting experience.
 
 ---
 
-## 🚀 Key Features
+## 🎯 Problem Statement & Goals
 
-### 1. 🗳️ 4+ Specialized Poll Types
-- **Single-Choice Polls**: Classic multiple-choice questions with 2 to 4 custom options.
-- **Image-Based Polls**: Visual voting with direct image uploads powered by Cloudinary.
-- **Open-Ended Polls**: Public discussion prompt accepting rich text feedback and real-time response streams.
-- **Yes / No Polls**: Rapid binary decision polls with automated option generation.
-- **Rating Polls**: 5-star interactive rating breakdowns with aggregated metrics.
+Traditional polling tools are often static, rigid in question formats, and lack social engagement layers like personalized history tracking and bookmarks. 
 
-### 2. 📱 Dashboard & User Profile
-- **Explore Feed**: Infinite-scroll feed of all public community polls.
-- **Filter Bar**: Instant filtering by poll format (Single Choice, Yes/No, Image Based, Open Ended, Rating).
-- **My Polls**: Manage created polls, close active polls, or delete completed polls.
-- **Voted Polls**: Dedicated history tracking of all polls in which the user has participated.
-- **Bookmarks**: Save interesting polls to your personal bookmarks for future review.
-- **User Stats Card**: Real-time counters showing total polls created, voted, and saved.
+### Key Goals:
+- **Instant Vote Updates**: Dynamic percentage calculations and instant feedback upon vote submission.
+- **Poll Format Diversity**: Support for 4+ poll types tailored for different questions.
+- **User Engagement & History**: Dedicated sections for **My Polls**, **Voted Polls**, and **Bookmarks**.
+- **Intuitive Discovery**: Clean dashboard with instant search, category filters, and infinite scroll.
 
-### 3. 🔐 Secure Authentication & Storage
-- JWT (JSON Web Token) authentication with secure password hashing via `bcryptjs`.
-- Protected backend API routes with middleware validation.
-- Cloudinary cloud storage integration for profile pictures and poll images.
-- Complete state management using **Redux Toolkit (`@reduxjs/toolkit`)**.
+---
+
+## ✨ Features
+
+### 🗳️ 4+ Specialized Poll Formats
+1. **Single-Choice Polls**: Classic multiple-choice format with customizable options and live progress bars.
+2. **Image-Based Polls**: Visual voting with image uploads powered by Cloudinary.
+3. **Open-Ended Polls**: Discussion prompts where voters submit custom written responses.
+4. **Yes / No Polls**: Quick binary decision polls with automated option setup.
+5. **5-Star Rating Polls**: Interactive star-rating feedback with aggregated average metrics.
+
+### 👤 User Profile & Personalization
+- **Explore Feed**: Browse all public community polls with filter tags.
+- **My Created Polls**: Manage your published polls (close active voting or delete polls).
+- **Voted Polls**: Review your entire participation history.
+- **Bookmarked Polls**: Save important polls to your personal bookmarks for quick access.
+- **Stats Card**: Real-time counters showing total polls created, voted, and saved.
+
+### 🛡️ Security & Performance
+- **JWT Authentication**: Secure login and signup with `bcryptjs` password hashing.
+- **Redux Toolkit (`@reduxjs/toolkit`)**: Predictable global state management.
+- **Cloudinary Integration**: Direct, secure cloud image hosting.
+- **Mobile Responsive**: Fully adaptive design built with Tailwind CSS.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
+```mermaid
+graph TD
+    Client["Frontend (React 18 + Vite + Redux Toolkit + Tailwind)"]
+    Server["Backend (Node.js + Express.js)"]
+    DB[(MongoDB Atlas)]
+    Cloud["Cloudinary (Image Storage)"]
+    
+    Client -->|REST API Requests / JWT| Server
+    Server -->|CRUD Operations| DB
+    Client -->|Upload Media| Server
+    Server -->|Store Media| Cloud
+```
+
+| Component | Technology |
 |---|---|
-| **Frontend** | React 18, Vite, Redux Toolkit (`@reduxjs/toolkit`, `react-redux`), React Router v7, Tailwind CSS, React Icons, React Hot Toast, Axios |
-| **Backend** | Node.js, Express.js 5, Mongoose 8 |
-| **Database** | MongoDB Atlas |
-| **Authentication** | JWT (jsonwebtoken) & bcryptjs |
-| **Media Storage** | Cloudinary & Multer |
-| **Deployment** | Vercel (Frontend & Backend Serverless) / Render |
+| **Frontend Framework** | React 18 with Vite |
+| **State Management** | Redux Toolkit (`@reduxjs/toolkit`, `react-redux`) |
+| **Styling** | Tailwind CSS & PostCSS |
+| **Routing** | React Router v7 |
+| **Icons & Notifications** | React Icons, React Hot Toast |
+| **Backend Framework** | Node.js with Express.js |
+| **Database** | MongoDB Atlas with Mongoose ODM |
+| **Auth & Security** | JSON Web Tokens (JWT) & bcryptjs |
+| **Cloud Storage** | Cloudinary & Multer |
+| **Deployment** | Vercel (Monorepo / Serverless) |
 
 ---
 
-## 📂 Database Schema Overview
+## 📂 Database Schemas
 
-### User Schema
+### 1. User Schema
 ```javascript
 {
   username: { type: String, required: true, unique: true },
@@ -83,7 +108,7 @@ A modern, real-time **MERN stack polling platform** developed by **Rahul Prakash
 }
 ```
 
-### Poll Schema
+### 2. Poll Schema
 ```javascript
 {
   question: { type: String, required: true },
@@ -113,43 +138,43 @@ A modern, real-time **MERN stack polling platform** developed by **Rahul Prakash
 ## 📡 API Endpoints
 
 ### 🔑 Authentication (`/api/v1/auth`)
-| Method | Endpoint | Description | Auth Required |
-|---|---|---|---|
-| `POST` | `/api/v1/auth/register` | Register new user account | No |
-| `POST` | `/api/v1/auth/login` | Login user & receive JWT token | No |
-| `GET` | `/api/v1/auth/getUser` | Get current logged-in user profile & stats | Yes |
+| Method | Endpoint | Description | Auth |
+|---|---|---|:---:|
+| `POST` | `/api/v1/auth/register` | Register a new user account | ❌ |
+| `POST` | `/api/v1/auth/login` | Login user & return JWT token | ❌ |
+| `GET` | `/api/v1/auth/getUser` | Get current user profile and live stats | ✅ |
 
 ### 🗳️ Polls (`/api/v1/poll`)
-| Method | Endpoint | Description | Auth Required |
-|---|---|---|---|
-| `POST` | `/api/v1/poll/create` | Create a new poll (all 4+ types) | Yes |
-| `GET` | `/api/v1/poll/getAllPolls` | Fetch public polls with pagination & filtering | Yes |
-| `GET` | `/api/v1/poll/votedPolls` | Fetch polls voted by current user | Yes |
-| `GET` | `/api/v1/poll/user/bookmarked` | Fetch bookmarked polls | Yes |
-| `GET` | `/api/v1/poll/:id` | Fetch specific poll details | Yes |
-| `POST` | `/api/v1/poll/:id/vote` | Submit a vote or open-ended response | Yes |
-| `POST` | `/api/v1/poll/:id/bookmark` | Toggle bookmark status for a poll | Yes |
-| `POST` | `/api/v1/poll/:id/close` | Mark poll as closed (creator only) | Yes |
-| `DELETE` | `/api/v1/poll/:id/delete` | Delete a poll (creator only) | Yes |
+| Method | Endpoint | Description | Auth |
+|---|---|---|:---:|
+| `POST` | `/api/v1/poll/create` | Create a new poll | ✅ |
+| `GET` | `/api/v1/poll/getAllPolls` | Get all public polls with filters and pagination | ✅ |
+| `GET` | `/api/v1/poll/votedPolls` | Get all polls voted by the logged-in user | ✅ |
+| `GET` | `/api/v1/poll/user/bookmarked` | Get bookmarked polls of the logged-in user | ✅ |
+| `GET` | `/api/v1/poll/:id` | Get poll details by ID | ✅ |
+| `POST` | `/api/v1/poll/:id/vote` | Submit a vote or text response | ✅ |
+| `POST` | `/api/v1/poll/:id/bookmark` | Toggle poll bookmark status | ✅ |
+| `POST` | `/api/v1/poll/:id/close` | Close an active poll (creator only) | ✅ |
+| `DELETE` | `/api/v1/poll/:id/delete` | Delete a poll (creator only) | ✅ |
 
-### 🖼️ Media (`/api/upload`)
-| Method | Endpoint | Description | Auth Required |
-|---|---|---|---|
-| `POST` | `/api/upload` | Upload image to Cloudinary & return secure URL | No |
+### 🖼️ Media Uploads (`/api/upload`)
+| Method | Endpoint | Description | Auth |
+|---|---|---|:---:|
+| `POST` | `/api/upload` | Upload image to Cloudinary and return secure URL | ❌ |
 
 ---
 
 ## ⚙️ Local Development Setup
 
 ### 1. Prerequisites
-- Node.js (v18 or higher)
-- MongoDB Database (Local or MongoDB Atlas connection string)
-- Cloudinary Account (for image uploads)
+- Node.js (v18.0 or higher)
+- MongoDB Database (Local instance or [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+- Cloudinary Account (for media uploads)
 
 ### 2. Clone the Repository
 ```bash
-git clone <your-repository-url>
-cd Polling-App-main
+git clone https://github.com/rahulprakash0898/Polling-App.git
+cd Polling-App
 ```
 
 ### 3. Backend Setup
@@ -158,32 +183,32 @@ cd backend
 npm install
 ```
 
-Create a `.env` file in the `backend/` folder (refer to `backend/.env.example`):
+Create a `.env` file in the `backend/` directory:
 ```env
 PORT=5000
 NODE_ENV=development
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/polling_app?retryWrites=true&w=majority
+JWT_SECRET=your_secret_jwt_key
 CLIENT_URL=http://localhost:5173
-CLOUDINARY_CLOUD_NAME=your_cloudinary_name
+CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
 CLOUDINARY_API_KEY=your_cloudinary_api_key
 CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 ```
 
-Start the backend server:
+Start the backend development server:
 ```bash
 npm run dev
-# Server will run on http://localhost:5000
+# Backend runs on: http://localhost:5000
 ```
 
 ### 4. Frontend Setup
-Open a new terminal window:
+In a new terminal:
 ```bash
 cd frontend
 npm install
 ```
 
-Create a `.env` file in the `frontend/` folder (refer to `frontend/.env.example`):
+Create a `.env` file in the `frontend/` directory:
 ```env
 VITE_API_URL=http://localhost:5000
 ```
@@ -191,41 +216,38 @@ VITE_API_URL=http://localhost:5000
 Start the Vite development server:
 ```bash
 npm run dev
-# App will run on http://localhost:5173
+# Frontend runs on: http://localhost:5173
 ```
 
 ---
 
-## 🚀 Vercel Deployment Guide
+## 🚀 Vercel Deployment
 
-### Deploying Frontend to Vercel
-1. Import the repository into your Vercel Dashboard.
-2. Set **Root Directory** to `frontend`.
-3. Framework Preset: **Vite**.
-4. Configure Environment Variable:
-   - `VITE_API_URL`: `https://your-backend-api-url.vercel.app` (or your Render URL)
-5. Deploy! Client-side routing is handled automatically via `frontend/vercel.json`.
+This repository includes a root [vercel.json](./vercel.json) configured for full-stack monorepo deployment:
 
-### Deploying Backend to Vercel
-1. In Vercel, import the repository and set **Root Directory** to `backend`.
-2. Configure Environment Variables in Vercel Project Settings:
-   - `MONGO_URI`
-   - `JWT_SECRET`
-   - `CLIENT_URL` (your frontend Vercel domain)
-   - `CLOUDINARY_CLOUD_NAME`
-   - `CLOUDINARY_API_KEY`
-   - `CLOUDINARY_API_SECRET`
-3. Deploy! `backend/vercel.json` and `backend/server.js` export the Express serverless handler.
-
----
-
-## 🔒 Security Best Practices
-- All `.env` environment files and secret keys are protected by `.gitignore`.
-- No sensitive credentials or secrets are committed to version control.
-- Passwords are salted and hashed using bcrypt before database persistence.
-- CORS policies ensure authorized access between frontend and backend origins.
+### Deploy Steps:
+1. Import your GitHub repository to [Vercel](https://vercel.com).
+2. Under **Environment Variables**, paste the following configuration:
+   ```env
+   MONGO_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   CLIENT_URL=https://your-project.vercel.app
+   CLOUDINARY_CLOUD_NAME=your_cloud_name
+   CLOUDINARY_API_KEY=your_api_key
+   CLOUDINARY_API_SECRET=your_api_secret
+   VITE_API_URL=https://your-project.vercel.app
+   NODE_ENV=production
+   ```
+3. Click **Deploy**. Vercel will build and deploy both the Vite frontend and the Express backend API automatically!
 
 ---
 
 ## 📄 License
-This project is licensed under the MIT License — created with ❤️ by **Rahul Prakash**.
+
+This project is licensed under the **MIT License** — feel free to use and customize for your own projects.
+
+---
+
+<div align="center">
+  <b>Developed with ❤️ by <a href="https://github.com/rahulprakash0898">Rahul Prakash</a></b>
+</div>
