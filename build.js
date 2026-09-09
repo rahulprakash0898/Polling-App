@@ -2,9 +2,9 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-console.log('📦 1. Building Frontend...');
-execSync('cd frontend && npm install && npm run build', { stdio: 'inherit' });
-
+console.log('📦 1. Building Frontend...');execSync('cd frontend && npm install --include=dev && npm run build', {
+    stdio: 'inherit'
+});
 console.log('📦 2. Installing Backend dependencies...');
 execSync('cd backend && npm install', { stdio: 'inherit' });
 
