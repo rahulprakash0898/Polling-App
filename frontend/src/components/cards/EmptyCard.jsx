@@ -1,21 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-const EmptyCard = ({ imgSrc, message, btnText, onClick }) => {
+const EmptyCard = ({ imgSrc, imgsrc, message, btnText, onClick }) => {
+  const image = imgSrc || imgsrc;
   return (
-    <div className='bg-gray-100/50 flex flex-col items-center justify-center mt-6 py-20 rounded-lg'>
-        <img src={imgSrc} alt='No notes' className='w-36 md:w-48' />
+    <div className='bg-slate-50 border border-slate-200/80 flex flex-col items-center justify-center my-6 py-16 px-6 rounded-2xl'>
+      {image && (
+        <img src={image} alt='Empty' className='w-36 md:w-44 object-contain mb-4' />
+      )}
 
-        <p className='w-2/3 text-xs md:text-[14px] text-slate-900 text-center leading-6 mt-7'>
+      <p className='max-w-md text-xs md:text-[14px] font-medium text-slate-600 text-center leading-relaxed'>
         {message}
-        </p>
+      </p>
 
-        {btnText && (
-            <button className='btn-small px-6 py-2 mt-7' onClick={onClick}>
-                {btnText}
-            </button>
-        )}
+      {btnText && (
+        <button className='btn-small px-6 py-2.5 mt-6 font-semibold shadow-sm' onClick={onClick}>
+          {btnText}
+        </button>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default EmptyCard
+export default EmptyCard;
