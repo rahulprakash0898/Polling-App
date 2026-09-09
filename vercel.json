@@ -3,6 +3,10 @@
   "buildCommand": "node build.js",
   "rewrites": [
     {
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
