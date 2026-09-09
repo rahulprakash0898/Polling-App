@@ -24,22 +24,19 @@ app.use(express.json());
 connectDB();
 
 // API Health Check
-app.get("/", (req, res) => {
+app.get(["/", "/api", "/api/health"], (req, res) => {
     res.status(200).json({
         name: "Polling-App API",
         version: "1.0.0",
-        status: "Active & Healthy"
+        status: "Active & Healthy",
+        timestamp: new Date()
     });
 });
 
-app.get("/api/health", (req, res) => {
-    res.status(200).json({ status: "OK", timestamp: new Date() });
-});
-
-// Routes
-app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/poll", pollRoutes);
-app.use("/api/upload", uploadRoutes);
+// Routes supporting both /api/ prefix and direct routes
+app.use(["/api/v1/auth", "/v1/auth"], authRoutes);
+app.use(["/api/v1/poll", "/v1/poll"], pollRoutes);
+app.use(["/api/upload", "/upload"], uploadRoutes);
 
 // Optional static uploads folder (fallback if local storage is used)
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
