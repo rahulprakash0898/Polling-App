@@ -44,7 +44,7 @@ const Bookmarks = () => {
         setHasMore(false);
       }
     } catch (error) {
-      console.error("Error fetching bookmarks:", error);
+      // Handled silently
     } finally {
       setLoading(false);
     }

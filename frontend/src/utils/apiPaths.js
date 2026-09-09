@@ -1,4 +1,5 @@
-export const API_BASE_URL = import.meta.env.VITE_API_URL;
+const rawBaseUrl = import.meta.env.VITE_API_URL || "";
+export const API_BASE_URL = rawBaseUrl.endsWith("/") ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
 
 export const API_PATHS = {
   AUTH: {

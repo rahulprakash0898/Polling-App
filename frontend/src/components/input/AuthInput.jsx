@@ -8,8 +8,6 @@ const AuthInput = ({ value, onChange, label, type, placeholder }) => {
     setShowPassword((prev) => !prev);
   };
 
-  console.log('AuthInput type:', type); // Debugging log
-
   return (
     <div>
       <label className="text-[13px] text-slate-800">{label}</label>
@@ -17,7 +15,7 @@ const AuthInput = ({ value, onChange, label, type, placeholder }) => {
         <input
           type={type === 'password' && showPassword ? 'text' : type}
           placeholder={placeholder}
-          className="w-full bg-transparent outline-none pr-10" // Add padding for the icon
+          className="w-full bg-transparent outline-none pr-10"
           value={value}
           onChange={(e) => onChange(e)}
         />
@@ -43,4 +41,4 @@ const AuthInput = ({ value, onChange, label, type, placeholder }) => {
   );
 };
 
-export default AuthInput; 
+export default AuthInput;

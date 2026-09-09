@@ -47,7 +47,7 @@ const Home = () => {
         setHasMore(false);
       }
     } catch (error) {
-      console.error("Error fetching polls:", error);
+      // Handled silently
     } finally {
       setLoading(false);
     }

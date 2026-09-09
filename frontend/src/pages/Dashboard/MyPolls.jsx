@@ -50,7 +50,7 @@ const MyPolls = () => {
         setHasMore(false);
       }
     } catch (error) {
-      console.error("Error fetching my polls:", error);
+      // Handled silently
     } finally {
       setLoading(false);
     }

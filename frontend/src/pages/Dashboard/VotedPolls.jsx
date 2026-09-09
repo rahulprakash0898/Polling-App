@@ -45,7 +45,7 @@ const VotedPolls = () => {
         setHasMore(false);
       }
     } catch (error) {
-      console.error("Error fetching voted polls:", error);
+      // Handled silently
     } finally {
       setLoading(false);
     }

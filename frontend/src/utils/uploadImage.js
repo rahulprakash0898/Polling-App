@@ -12,10 +12,8 @@ const uploadImage = async (imageFile) => {
       },
     });
 
-    // ✅ Return only the imageUrl
     return response.data.imageUrl;
   } catch (error) {
-    console.error("Error uploading image:", error);
     throw error;
   }
 };
