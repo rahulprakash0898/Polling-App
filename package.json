@@ -1,0 +1,13 @@
+{
+  "name": "Polling-App",
+  "version": "1.0.0",
+  "description": "Polling-App - Real-time MERN Stack Polling Platform",
+  "author": "Rahul Prakash",
+  "license": "MIT",
+  "scripts": {
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  }
+}
