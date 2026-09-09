@@ -20,8 +20,15 @@ app.use(
 
 app.use(express.json());
 
-// Initialize Database connection
-connectDB();
+// Ensure Database is connected for Serverless Functions
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+    } catch (e) {
+        // Continue
+    }
+    next();
+});
 
 // API Health Check
 app.get(["/", "/api", "/api/health"], (req, res) => {
@@ -38,7 +45,7 @@ app.use(["/api/v1/auth", "/v1/auth"], authRoutes);
 app.use(["/api/v1/poll", "/v1/poll"], pollRoutes);
 app.use(["/api/upload", "/upload"], uploadRoutes);
 
-// Optional static uploads folder (fallback if local storage is used)
+// Optional static uploads folder
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 const PORT = process.env.PORT || 5000;
